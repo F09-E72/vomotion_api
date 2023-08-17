@@ -21,8 +21,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vomotion.Presentation", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vomotion.Web", "src\Vomotion.Web\Vomotion.Web.csproj", "{9CC44CCA-4881-4FE8-BF0E-8623BD9E12A8}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{EFDB57CC-0524-473D-B399-A0E6FDCC54B8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,10 +55,6 @@ Global
 		{9CC44CCA-4881-4FE8-BF0E-8623BD9E12A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CC44CCA-4881-4FE8-BF0E-8623BD9E12A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CC44CCA-4881-4FE8-BF0E-8623BD9E12A8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EFDB57CC-0524-473D-B399-A0E6FDCC54B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EFDB57CC-0524-473D-B399-A0E6FDCC54B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EFDB57CC-0524-473D-B399-A0E6FDCC54B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EFDB57CC-0524-473D-B399-A0E6FDCC54B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

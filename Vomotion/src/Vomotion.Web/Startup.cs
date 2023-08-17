@@ -29,7 +29,8 @@ public class Startup
 
         services.AddDbContextPool<RepositoryDbContext>(builder =>
         {
-            var connectionString = Configuration.GetConnectionString("Database");
+            var connectionString = Domain.Settings.EnvironmentVariables.ConnectionString;
+            connectionString   ??= Configuration.GetConnectionString("Database");
 
             builder.UseNpgsql(connectionString);
         });
