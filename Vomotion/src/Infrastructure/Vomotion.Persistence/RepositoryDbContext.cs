@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Vomotion.Domain.Entities;
 
 namespace Vomotion.Persistence;
 
@@ -9,8 +10,8 @@ public sealed class RepositoryDbContext : DbContext
     {
     }
 
-    // Add dbset here
-
+    public DbSet<User> Users { get; set; }
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder) =>
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(RepositoryDbContext).Assembly);
 }

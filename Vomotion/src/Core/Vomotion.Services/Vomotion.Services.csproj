@@ -6,6 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+	<ItemGroup>
+		<PackageReference Include="Mapster" Version="7.2.0" />
+	</ItemGroup>
+	
   <ItemGroup>
     <ProjectReference Include="..\Vomotion.Domain\Vomotion.Domain.csproj" />
     <ProjectReference Include="..\Vomotion.Services.Abstractions\Vomotion.Services.Abstractions.csproj" />
