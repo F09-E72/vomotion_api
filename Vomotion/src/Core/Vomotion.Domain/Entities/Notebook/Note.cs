@@ -1,4 +1,6 @@
-﻿namespace Vomotion.Domain.Entities;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Vomotion.Domain.Entities;
 
 public sealed class Note : BaseDate<Note>
 {
@@ -8,10 +10,7 @@ public sealed class Note : BaseDate<Note>
         int[] highlitedPositionsOriginal,
         string titleTranslated,
         string contentTranslated,
-        int[] highlightedPositionsTranslated,
-        User user,
-        FlashCard[] flashcards,
-        Notebook notebooks)
+        int[] highlightedPositionsTranslated)
     {
         TitleOriginal = titleOriginal;
         ContentOriginal = contentOriginal;
@@ -19,9 +18,6 @@ public sealed class Note : BaseDate<Note>
         TitleTranslated = titleTranslated;
         ContentTranslated = contentTranslated;
         HighlightedPositionsTranslated = highlightedPositionsTranslated;
-        User = user;
-        Flashcards = flashcards;
-        Notebooks = notebooks;
     }
 
     public string TitleOriginal { get; private set; }
@@ -30,7 +26,11 @@ public sealed class Note : BaseDate<Note>
     public string TitleTranslated { get; private set; }
     public string ContentTranslated { get; private set; }
     public int[] HighlightedPositionsTranslated { get; private set; }
-    public User User { get; private set; }
-    public FlashCard[] Flashcards { get; private set; }
-    public Notebook Notebooks { get; private set; }
+    public int UserId { get; private set; }
+    [ForeignKey("UserId")]
+    public User? User { get; private set; }
+    public int NotebookId { get; private set; }
+    [ForeignKey("NotebookId")]
+    public Notebook? Notebook { get; private set; }
+    public IEnumerable<FlashCard>? Flashcards { get; private set; }
 }

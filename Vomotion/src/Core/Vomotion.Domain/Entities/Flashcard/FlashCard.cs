@@ -1,27 +1,29 @@
-﻿namespace Vomotion.Domain.Entities;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-public sealed class FlashCard : Base<FlashCard>
+namespace Vomotion.Domain.Entities;
+
+public sealed class FlashCard : BaseDate<FlashCard>
 {
     public FlashCard(
-        Note note,
         string frontWord,
         string backWord,
         string frontSentence,
         string backSentence,
-        FlashCardState flashCardState)
+        int severity)
     {
-        Note = note;
         FrontWord = frontWord;
         BackWord = backWord;
         FrontSentence = frontSentence;
         BackSentence = backSentence;
-        FlashCardState = flashCardState;
+        Severity = severity;
     }
 
-    public Note Note { get; private set; }
     public string FrontWord { get; private set; }
     public string BackWord { get; private set; }
     public string FrontSentence { get; private set; }
     public string BackSentence { get; private set; }
-    public FlashCardState FlashCardState { get; private set; }
+    public int Severity { get; private set; }
+    public int NoteId { get; private set; }
+    [ForeignKey("NoteId")]
+    public Note? Note { get; private set; }
 }

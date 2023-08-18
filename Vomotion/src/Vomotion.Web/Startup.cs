@@ -27,12 +27,11 @@ public class Startup
 
         services.AddScoped<IRepositoryManager, RepositoryManager>();
 
-        services.AddDbContextPool<RepositoryDbContext>(builder =>
+        services.AddDbContext<RepositoryDbContext>(options =>
         {
             var connectionString = Domain.Settings.EnvironmentVariables.ConnectionString;
-            connectionString   ??= Configuration.GetConnectionString("Database");
 
-            builder.UseNpgsql(connectionString);
+            options.UseNpgsql(connectionString);
         });
 
         services.AddTransient<ExceptionHandlingMiddleware>();
